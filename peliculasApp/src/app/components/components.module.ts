@@ -5,24 +5,28 @@ import { PipesModule } from '../pipes/pipes.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SlideshowPosterComponent } from './slideshow-poster/slideshow-poster.component';
 import { SlideshowParesComponent } from './slideshow-pares/slideshow-pares.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 
 @NgModule({
+  
   declarations: [
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
-    SlideshowParesComponent
+    SlideshowParesComponent,
+    DetalleComponent
   ],
-  exports:[
+  exports: [
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
-    SlideshowParesComponent
-
+    SlideshowParesComponent,
+    
   ],
   imports: [
     CommonModule,
-      IonicModule,
-      PipesModule
+    IonicModule,
+    PipesModule,
+    
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

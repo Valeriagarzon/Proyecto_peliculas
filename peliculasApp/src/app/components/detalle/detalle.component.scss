@@ -1,0 +1,69 @@
+.poster-detalle-sobre {
+    position: relative;
+    top: -75px;
+    left: -10px;
+    margin-bottom: -75px;
+}
+
+.titulo {
+    width: 100%;
+    position: absolute;
+    color: white;
+    background-color: red;
+    padding: 5px 5px 40px 5px;
+
+    /* Degradado */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+}
+
+.titulo h1 {
+    position: absolute;
+    top: 28px;
+    left: 5px;
+}
+
+.card-actor {
+    height: 210px;
+}
+
+.actor-name {
+    position: relative;
+    top: 15px;
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: white;
+    text-align: center;
+}
+
+/* Scroll horizontal moderno para actores */
+.scroll-actores {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+
+    .actor-card {
+        flex: 0 0 auto;
+        width: 120px;
+        scroll-snap-align: start;
+        text-align: center;
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        ion-label.actor-name {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: white;
+        }
+    }
+}
