@@ -4,7 +4,6 @@ import { ModalController } from '@ionic/angular';
 import { DetalleComponent } from '../components/detalle/detalle.component';
 import { MoviesService } from '../services/movies.service';
 
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -20,7 +19,8 @@ export class Tab2Page {
 
   constructor(
     private moviesService: MoviesService,
-    private modalCtrl: ModalController) { }
+    private modalCtrl: ModalController
+  ) { }
 
   buscar(event: CustomEvent) {
     const valor: string = event.detail.value;
@@ -42,8 +42,18 @@ export class Tab2Page {
       });
   }
 
-  async detalle(id: string) {
+  buscarIdea(idea: string) {
+    this.textoBuscar = idea;
+    this.buscando = true;
 
+    this.moviesService.buscarPeliculas(idea)
+      .subscribe(resp => {
+        this.peliculas = resp['results'];
+        this.buscando = false;
+      });
+  }
+
+  async detalle(id: string) {
     const modal = await this.modalCtrl.create({
       component: DetalleComponent,
       componentProps: {
@@ -51,8 +61,7 @@ export class Tab2Page {
       }
     });
 
-    modal.present();
-
+    await modal.present();
   }
 
 }
