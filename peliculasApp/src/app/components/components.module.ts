@@ -9,7 +9,7 @@ import { DetalleComponent } from './detalle/detalle.component';
 
 
 @NgModule({
-  
+
   declarations: [
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
@@ -20,13 +20,13 @@ import { DetalleComponent } from './detalle/detalle.component';
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
     SlideshowParesComponent,
-    
+
   ],
   imports: [
     CommonModule,
-    IonicModule,
+    IonicModule.forRoot(),
     PipesModule,
-    
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

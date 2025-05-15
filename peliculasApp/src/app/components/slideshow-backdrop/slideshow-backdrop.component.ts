@@ -7,7 +7,8 @@ import { DetalleComponent } from '../detalle/detalle.component';
   selector: 'app-slideshow-backdrop',
   templateUrl: './slideshow-backdrop.component.html',
   styleUrls: ['./slideshow-backdrop.component.scss'],
-  standalone:false
+  standalone:false,
+  //imports: [FiltroImagenPipe, CommonModule]
 })
 export class SlideshowBackdropComponent  implements OnInit {
 

@@ -4,7 +4,7 @@
   style="width: 100%; height: auto;"
 >
 
-  <swiper-slide *ngFor="let pelicula of peliculas">
+  <swiper-slide *ngFor="let pelicula of peliculas | filtroImagen">
     <ion-card (click)="verDetalle(pelicula.id.toString())">
       <img [src]="pelicula.backdrop_path | imagen">
     </ion-card>

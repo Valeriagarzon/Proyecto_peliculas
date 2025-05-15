@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { PeliculaDetalle, Cast } from '../../interfaces/interfaces';
 import { ModalController } from '@ionic/angular';
+import { DataLocalService } from 'src/app/services/data-local.service';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class DetalleComponent  implements OnInit {
 
   constructor(private moviesService: MoviesService,
               private modalCtrl: ModalController,
+              private dataLocal: DataLocalService
   ) { }
 
   ngOnInit() {
@@ -42,13 +44,13 @@ export class DetalleComponent  implements OnInit {
         this.actores = resp.cast;
       });
   }
-  
+
   regresar() {
     this.modalCtrl.dismiss();
   }
 
   favorito() {
-    // const existe = this.dataLocal.guardarPelicula(this.pelicula);
-    // this.estrella = (existe) ? 'star' : 'star-outline';
+    const existe = this.dataLocal.guardarPelicula(this.pelicula);
+    this.estrella = (existe) ? 'star' : 'star-outline';
   }
 }
